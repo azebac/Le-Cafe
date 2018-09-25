@@ -23,9 +23,26 @@
               "src/assets"
             ],
             "styles": [
-              "src/styles.css"
+              "src/styles.css",
+              "src/assets/bootstrap/bootstrap.min.css",
+              "src/assets/font-awesome/css/font-awesome.min.css",
+              "src/assets/inspinia/style.scss"
             ],
-            "scripts": []
+            "scripts": [
+              "src/assets/js/jquery-3.1.1.min.js",
+              "src/assets/js/bootstrap.min.js",
+              "src/assets/js/inspinia.js",
+              "src/assets/js/plugins/metisMenu/jquery.metisMenu.js",
+              "src/assets/js/plugins/slimscroll/jquery.slimscroll.min.js",
+              "src/assets/js/plugins/flot/jquery.flot.js",
+              "src/assets/js/plugins/flot/jquery.flot.tooltip.min.js",
+              "src/assets/js/plugins/flot/jquery.flot.spline.js",
+              "src/assets/js/plugins/flot/jquery.flot.resize.js",
+              "src/assets/js/plugins/flot/jquery.flot.pie.js",
+              "src/assets/js/plugins/peity/jquery.peity.min.js",
+              "src/assets/js/plugins/pace/pace.min.js",
+              "src/assets/js/plugins/chartJs/Chart.min.js"
+            ]
           },
           "configurations": {
             "production": {
