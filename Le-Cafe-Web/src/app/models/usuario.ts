@@ -4,6 +4,7 @@ import { Recompensa } from "./recompensa";
 export class Usuario{
     id: number;
     correo: string;
+    password: string;
     nombre: string;
     apellido: string;
     fechaNacimiento: Date;
@@ -11,5 +12,6 @@ export class Usuario{
     estatus: string;
     reservaciones: Reserva[] = [];
     recompensas: Recompensa[] = [];
+    token: string;
 
 }

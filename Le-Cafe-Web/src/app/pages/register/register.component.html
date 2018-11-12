@@ -1,0 +1,58 @@
+<div class="middle-box text-center gray-bg loginscreen animated fadeInDown">
+  <form class="m-t" role="form" [formGroup]="registerForm" (ngSubmit)="onSubmit()">
+    <div class="form-group" [ngClass]="{ 'has-error': submitted && formulario.nombre.errors }">
+      <label class="control-label" for="nombre">Nombre</label>
+      <input type="text" formControlName="nombre" class="form-control" />
+      <div *ngIf="submitted && formulario.nombre.errors" class="invalid-feedback">
+        <div *ngIf="formulario.nombre.errors.required">
+          <label class="control-label"> Nombre requerido</label>
+        </div>
+      </div>
+    </div>
+    <div class="form-group" [ngClass]="{ 'has-error': submitted && formulario.apellido.errors }">
+      <label class="control-label" for="apellido">Apellido</label>
+      <input type="text" formControlName="apellido" class="form-control" />
+      <div *ngIf="submitted && formulario.apellido.errors" class="invalid-feedback">
+        <div *ngIf="formulario.apellido.errors.required">
+          <label class="control-label">Apellido requerido</label>
+        </div>
+      </div>
+    </div>
+    <div class="form-group" [ngClass]="{ 'has-error': submitted && formulario.correo.errors }">
+      <label class="control-label" for="correo">Correo</label>
+      <input type="text" formControlName="correo" class="form-control" />
+      <div *ngIf="submitted && formulario.correo.errors" class="invalid-feedback">
+        <div *ngIf="formulario.correo.errors.required">
+          <label class="control-label"> Correo requerido</label>
+        </div>
+      </div>
+    </div>
+    <div class="form-group" [ngClass]="{ 'has-error': submitted && formulario.password.errors }">
+      <label class="control-label" for="password">Password</label>
+      <input type="password" formControlName="password" class="form-control" />
+      <div *ngIf="submitted && formulario.password.errors" class="invalid-feedback">
+        <div *ngIf="formulario.password.errors.required">
+          <label class="control-label">Password requerido</label>
+        </div>
+      </div>
+    </div>
+    <div class="form-group" id="fechaNacimiento" [ngClass]="{ 'has-error': submitted && formulario.fechaNacimmiento.errors }">
+      <label class="control-label" for="fechaNacimiento">Fecha de nacimiento</label>
+      <div class="input-group date">
+        <span class="input-group-addon" (click)="d.toggle()"><i class="fa fa-calendar"></i></span><input type="text" ngbDatepicker #d="ngbDatepicker" class="form-control"
+          formControlName="fechaNacimiento" value="03/04/2014">
+      </div>
+      <div *ngIf="submitted && formulario.fechaNacimiento.errors" class="invalid-feedback">
+        <div *ngIf="formulario.fechaNacimiento.errors.required">
+          <label class="control-label">Fecha de nacimiento requerida</label>
+        </div>
+      </div>
+    </div>
+    <div class="form-group">
+      <button [disabled]="loading" class="btn btn-primary">Registrar</button>
+      <img *ngIf="loading" class="pl-3" src="data:image/gif;base64,R0lGODlhEAAQAPIAAP///wAAAMLCwkJCQgAAAGJiYoKCgpKSkiH/C05FVFNDQVBFMi4wAwEAAAAh/hpDcmVhdGVkIHdpdGggYWpheGxvYWQuaW5mbwAh+QQJCgAAACwAAAAAEAAQAAADMwi63P4wyklrE2MIOggZnAdOmGYJRbExwroUmcG2LmDEwnHQLVsYOd2mBzkYDAdKa+dIAAAh+QQJCgAAACwAAAAAEAAQAAADNAi63P5OjCEgG4QMu7DmikRxQlFUYDEZIGBMRVsaqHwctXXf7WEYB4Ag1xjihkMZsiUkKhIAIfkECQoAAAAsAAAAABAAEAAAAzYIujIjK8pByJDMlFYvBoVjHA70GU7xSUJhmKtwHPAKzLO9HMaoKwJZ7Rf8AYPDDzKpZBqfvwQAIfkECQoAAAAsAAAAABAAEAAAAzMIumIlK8oyhpHsnFZfhYumCYUhDAQxRIdhHBGqRoKw0R8DYlJd8z0fMDgsGo/IpHI5TAAAIfkECQoAAAAsAAAAABAAEAAAAzIIunInK0rnZBTwGPNMgQwmdsNgXGJUlIWEuR5oWUIpz8pAEAMe6TwfwyYsGo/IpFKSAAAh+QQJCgAAACwAAAAAEAAQAAADMwi6IMKQORfjdOe82p4wGccc4CEuQradylesojEMBgsUc2G7sDX3lQGBMLAJibufbSlKAAAh+QQJCgAAACwAAAAAEAAQAAADMgi63P7wCRHZnFVdmgHu2nFwlWCI3WGc3TSWhUFGxTAUkGCbtgENBMJAEJsxgMLWzpEAACH5BAkKAAAALAAAAAAQABAAAAMyCLrc/jDKSatlQtScKdceCAjDII7HcQ4EMTCpyrCuUBjCYRgHVtqlAiB1YhiCnlsRkAAAOwAAAAAAAAAAAA==" />
+
+    </div>
+
+  </form>
+</div>
