@@ -1,0 +1,267 @@
+package com.lecafe.common.entities;
+
+import javax.persistence.Column;
+import javax.persistence.Entity;
+import javax.persistence.FetchType;
+import javax.persistence.OneToOne;
+import javax.persistence.Table;
+import javax.persistence.Transient;
+import java.time.LocalDate;
+import java.util.Objects;
+
+@Entity
+@Table( name = "user" )
+public class User extends BaseEntity
+{
+    //region Attributes
+
+    @Column( name = "name", nullable = false, length = 45 )
+    private String _names;
+
+    @Column( name = "lastname", nullable = false, length = 45 )
+    private String _lastnames;
+
+    @Column( name = "birthdate" )
+    private LocalDate _birthDate;
+
+    @Column( name = "identificationNumber", nullable = false, unique = true, length = 45 )
+    private String _idNumber;
+
+    @Column( name = "email", nullable = false, unique = true, length = 150 )
+    private String _email;
+
+    @Transient
+    private String _password;
+
+    @Transient
+    private String _newPassword;
+
+    @Column( name = "picture" )
+    private String _picture;
+
+    @Column( name = "peer" )
+    private String _peer;
+
+    @Column( name = "idUserStatus", nullable = false )
+    private int _userStatus;
+
+    @OneToOne( fetch = FetchType.LAZY )
+    private Gender _gender;
+
+    @OneToOne( fetch = FetchType.LAZY )
+    private Country _country;
+
+    @OneToOne( fetch = FetchType.LAZY )
+    private CivilStatus _civilStatus;
+
+    //endregion
+
+    //region Constructors
+
+    public User()
+    {
+
+    }
+
+    public User( long id )
+    {
+        super( id );
+    }
+
+    //endregion
+
+    //region Properties
+
+    public String getNames()
+    {
+        return _names;
+    }
+
+    public void setNames( String names )
+    {
+        _names = names;
+    }
+
+    public String getLastnames()
+    {
+        return _lastnames;
+    }
+
+    public void setLastnames( String lastnames )
+    {
+        _lastnames = lastnames;
+    }
+
+    public LocalDate getBirthDate()
+    {
+        return _birthDate;
+    }
+
+    public void setBirthDate( LocalDate birthDate )
+    {
+        _birthDate = birthDate;
+    }
+
+    public String getIdNumber()
+    {
+        return _idNumber;
+    }
+
+    public void setIdNumber( String idNumber )
+    {
+        _idNumber = idNumber;
+    }
+
+    public String getEmail()
+    {
+        return _email;
+    }
+
+    public void setEmail( String email )
+    {
+        _email = email;
+    }
+
+    public String getPassword()
+    {
+        return _password;
+    }
+
+    public void setPassword( String password )
+    {
+        _password = password;
+    }
+
+    public String getNewPassword()
+    {
+        return _newPassword;
+    }
+
+    public void setNewPassword( String newPassword )
+    {
+        _newPassword = newPassword;
+    }
+
+    public String getPicture()
+    {
+        return _picture;
+    }
+
+    public void setPicture( String picture )
+    {
+        _picture = picture;
+    }
+
+    public String getPeer()
+    {
+        return _peer;
+    }
+
+    public void setPeer( String peer )
+    {
+        _peer = peer;
+    }
+
+    public int getUserStatus()
+    {
+        return _userStatus;
+    }
+
+    public void setUserStatus( int userStatus )
+    {
+        _userStatus = userStatus;
+    }
+
+    public Gender getGender()
+    {
+        return _gender;
+    }
+
+    public void setGender( Gender gender )
+    {
+        _gender = gender;
+    }
+
+    public Country getCountry()
+    {
+        return _country;
+    }
+
+    public void setCountry( Country country )
+    {
+        _country = country;
+    }
+
+    public CivilStatus getCivilStatus()
+    {
+        return _civilStatus;
+    }
+
+    public void setCivilStatus( CivilStatus civilStatus )
+    {
+        _civilStatus = civilStatus;
+    }
+
+    //endregion
+
+    @Override
+    public String toString()
+    {
+        final StringBuilder sb = new StringBuilder( "User{" );
+        sb.append( super.toString() );
+        sb.append( "_names='" ).append( _names ).append( '\'' );
+        sb.append( ", _lastnames='" ).append( _lastnames ).append( '\'' );
+        sb.append( ", _birthDate=" ).append( _birthDate );
+        sb.append( ", _idNumber='" ).append( _idNumber ).append( '\'' );
+        sb.append( ", _email='" ).append( _email ).append( '\'' );
+        sb.append( ", _password='" ).append( _password ).append( '\'' );
+        sb.append( ", _newPassword='" ).append( _newPassword ).append( '\'' );
+        sb.append( ", _picture='" ).append( _picture ).append( '\'' );
+        sb.append( ", _peer='" ).append( _peer ).append( '\'' );
+        sb.append( ", _userStatus=" ).append( _userStatus );
+        sb.append( ", _gender=" ).append( _gender );
+        sb.append( ", _country=" ).append( _country );
+        sb.append( ", _civilStatus=" ).append( _civilStatus );
+        sb.append( '}' );
+        return sb.toString();
+    }
+
+    @Override
+    public boolean equals( Object o )
+    {
+        User user;
+
+        if ( this == o )
+        {
+            return true;
+        }
+        if ( o == null || getClass() != o.getClass() )
+        {
+            return false;
+        }
+        if ( !super.equals( o ) )
+        {
+            return false;
+        }
+        user = ( User ) o;
+        return getUserStatus() == user.getUserStatus() && Objects.equals( getNames(), user.getNames() ) &&
+               Objects.equals( getLastnames(), user.getLastnames() ) &&
+               Objects.equals( getBirthDate(), user.getBirthDate() ) &&
+               Objects.equals( getIdNumber(), user.getIdNumber() ) && Objects.equals( getEmail(), user.getEmail() ) &&
+               Objects.equals( getPassword(), user.getPassword() ) &&
+               Objects.equals( getNewPassword(), user.getNewPassword() ) &&
+               Objects.equals( getPicture(), user.getPicture() ) && Objects.equals( getPeer(), user.getPeer() ) &&
+               Objects.equals( getGender(), user.getGender() ) && Objects.equals( getCountry(), user.getCountry() ) &&
+               Objects.equals( getCivilStatus(), user.getCivilStatus() );
+    }
+
+    @Override
+    public int hashCode()
+    {
+        return Objects.hash( super.hashCode(), getNames(), getLastnames(), getBirthDate(), getIdNumber(), getEmail(),
+                             getPassword(), getNewPassword(), getPicture(), getPeer(), getUserStatus(), getGender(),
+                             getCountry(), getCivilStatus() );
+    }
+
+
+}

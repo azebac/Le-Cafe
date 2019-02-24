@@ -1,0 +1,41 @@
+<persistence xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+             version="2.1" xmlns="http://xmlns.jcp.org/xml/ns/persistence"
+             xsi:schemaLocation="http://xmlns.jcp.org/xml/ns/persistence http://xmlns.jcp.org/xml/ns/persistence/persistence_2_1.xsd">
+
+    <persistence-unit name="aidpass-test" transaction-type="RESOURCE_LOCAL">
+        <provider>org.hibernate.jpa.HibernatePersistenceProvider</provider>
+        <!--<class>com.lecafecommon.entities.BaseEntity</class>-->
+        <class>com.lecafe.common.entities.MasterEntity</class>
+        <class>com.lecafe.common.entities.Gender</class>
+        <class>com.lecafe.common.entities.User</class>
+        <class>com.lecafe.common.entities.UserStatus</class>
+        <!--<jar-file>entities.jar</jar-file>-->
+        <properties>
+            <!-- Configurando propiedades JDBC -->
+            <property name="javax.persistence.jdbc.url" value="jdbc:mysql://127.0.0.1:3306/aidpass_2_0"/>
+            <property name="javax.persistence.jdbc.driver" value="com.mysql.jdbc.Driver"/>
+            <property name="javax.persistence.jdbc.user" value="root"/>
+            <property name="javax.persistence.jdbc.password" value="3squ3l3t0"/>
+            <!-- Propiedades Hibernate -->
+            <property name="hibernate.dialect" value="org.hibernate.dialect.MySQLDialect"/>
+            <property name="hibernate.show_sql" value="true" />
+            <property name="hibernate.format_sql" value="true" />
+            <property name="hibernate.hbm2ddl.auto" value="none" />
+            <!-- Pool de Conexiones -->
+            <!--<property name="hibernate.c3p0.min_size" value="5" />
+            <property name="hibernate.c3p0.max_size" value="20" />
+            <property name="hibernate.c3p0.timeout" value="500" />
+            <property name="hibernate.c3p0.max_statements" value="50" />
+            <property name="hibernate.c3p0.idle_test_period" value="2000" />-->
+
+            <!--<property name="eclipselink.target-database" value="HSQL"/>-->
+            <!--<property name="javax.persistence.jdbc.driver" value="org.hsqldb.jdbcDriver"/>-->
+            <!--<property name="javax.persistence.jdbc.user" value="sa"/>-->
+            <!--<property name="javax.persistence.jdbc.password" value=""/>-->
+            <!--<property name="javax.persistence.jdbc.url" value="jdbc:hsqldb:mem:lecafe-test"/>-->
+            <!--<property name="javax.persistence.schema-generation.database.action" value="create" />-->
+            <!--<property name="javax.persistence.schema-generation.drop-script-source" value="drop-db.sql" />-->
+        </properties>
+    </persistence-unit>
+
+</persistence>

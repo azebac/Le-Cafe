@@ -39,3 +39,17 @@ testem.log
 Thumbs.db
 
 Le-Cafe-Web/node_modules/
+
+src/\.idea/
+
+*.iml
+
+src/common/enums/target/
+
+Le-Cafe-REST/\.idea/
+
+Le-Cafe-REST/common/entities/target/
+
+Le-Cafe-REST/common/enums/target/
+
+*.class
