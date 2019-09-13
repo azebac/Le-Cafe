@@ -119,3 +119,25 @@ Le-Cafe-REST/common/utilities/target/
 Le-Cafe-REST/services/implementation/target/
 
 Le-Cafe-REST/target/
+
+Le-Cafe-Backend/.idea/
+
+Le-Cafe-Backend/common/entities/target/
+
+Le-Cafe-Backend/common/enums/target/
+
+Le-Cafe-Backend/common/exceptions/target/
+
+Le-Cafe-Backend/common/models/target/
+
+Le-Cafe-Backend/common/utilities/target/
+
+Le-Cafe-Backend/logic/commands/target/
+
+Le-Cafe-Backend/logic/dtos/target/
+
+Le-Cafe-Backend/logic/mappers/target/
+
+Le-Cafe-Backend/persistence/dao/target/
+
+Le-Cafe-Backend/services/implementation/target/

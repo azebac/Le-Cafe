@@ -1,0 +1,31 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<configuration>
+
+    <appender name="ALL-LOG" class="ch.qos.logback.core.rolling.RollingFileAppender">
+        <filter class="ch.qos.logback.classic.filter.LevelFilter">
+            <level>DEBUG</level>
+            <onMatch>ACCEPT</onMatch>
+            <onMismatch>ACCEPT</onMismatch>
+        </filter>
+
+        <file>C:\LeCafe\Log\unitTests.log</file>
+
+        <rollingPolicy class="ch.qos.logback.core.rolling.TimeBasedRollingPolicy">
+            <fileNamePattern>C:\LeCafe\Log\unitTests.%d{dd-MM-yyyy}.log</fileNamePattern>
+            <maxHistory>30</maxHistory>
+        </rollingPolicy>
+
+        <encoder>
+            <pattern>[%d{dd/MM/yyyy HH:mm:ss.SSS}] [%thread] %-5level | %msg%n</pattern>
+        </encoder>
+    </appender>
+
+    <appender name="ALL-ASYNC" class="ch.qos.logback.classic.AsyncAppender">
+        <appender-ref ref="ALL-LOG"/>
+    </appender>
+
+    <root level="DEBUG">
+        <appender-ref ref="ALL-ASYNC"/>
+    </root>
+
+</configuration>
