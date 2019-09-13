@@ -1,14 +1,10 @@
 package com.lecafe.common.entities;
 
 
-import com.lecafe.common.enums.UserStatus;
-import com.lecafe.common.enums.UserType;
 
 import javax.persistence.*;
 import java.time.LocalDate;
 import java.util.List;
-import java.util.Objects;
-
 @Entity
 @Table( name = "User" )
 @Inheritance( strategy = InheritanceType.JOINED )
@@ -30,6 +26,9 @@ public class User extends BaseEntity
 
     @Column( name = "birthdate" )
     private LocalDate birthdate;
+
+    @Column(name ="idnumber")
+    private String idNumber;
 
     @Column( name = "email", nullable = false, unique = true, length = 150 )
     private String email;
@@ -200,9 +199,27 @@ public class User extends BaseEntity
         this.points = points;
     }
 
+    public String getIdNumber()
+    {
+        return idNumber;
+    }
 
+    public void setIdNumber(String idNumber)
+    {
+        this.idNumber = idNumber;
+    }
 
-    //endregion
+    public List<UserReward> getUserRewardList()
+    {
+        return userRewardList;
+    }
+
+    public void setUserRewardList(List<UserReward> userRewardList)
+    {
+        this.userRewardList = userRewardList;
+    }
+
+//endregion
 
     @Override
     public String toString()

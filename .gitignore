@@ -101,3 +101,21 @@ Le-Cafe-Api/resources/obj/
 Le-Cafe-Api/unit/bin/
 
 Le-Cafe-Api/unit/obj/
+
+Le-Cafe-REST/persistence/dao/target/
+
+Le-Cafe-REST/common/exceptions/target/
+
+Le-Cafe-REST/common/target/
+
+Le-Cafe-REST/logic/commands/target/
+
+Le-Cafe-REST/logic/dtos/target/
+
+Le-Cafe-REST/logic/mappers/target/
+
+Le-Cafe-REST/common/utilities/target/
+
+Le-Cafe-REST/services/implementation/target/
+
+Le-Cafe-REST/target/

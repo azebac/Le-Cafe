@@ -10,7 +10,7 @@ public class EventStatus extends BaseEntity
     @Column(name="name")
     private String name;
 
-    @OneToMany( mappedBy = "fk_status", fetch = FetchType.LAZY, cascade = CascadeType.PERSIST)
+    @OneToMany( mappedBy = "eventStatus", fetch = FetchType.LAZY, cascade = CascadeType.PERSIST)
     private List<Event> eventList;
 
 

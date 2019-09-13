@@ -15,8 +15,11 @@ public class Reservation extends BaseEntity
     @JoinColumn( name = "fk_table" )
     private TableEntity table;
 
-    @Column(name="date")
-    private Date date;
+    @Column(name="begin_date")
+    private Date beginDate;
+
+    @Column(name="end_date")
+    private Date endDate;
 
     public Reservation()
     {
@@ -47,13 +50,13 @@ public class Reservation extends BaseEntity
         this.table = table;
     }
 
-    public Date getDate()
+    public Date getBeginDate()
     {
-        return date;
+        return beginDate;
     }
 
-    public void setDate(Date date)
+    public void setBeginDate(Date beginDate)
     {
-        this.date = date;
+        this.beginDate = beginDate;
     }
 }

@@ -2,21 +2,41 @@
              version="2.1" xmlns="http://xmlns.jcp.org/xml/ns/persistence"
              xsi:schemaLocation="http://xmlns.jcp.org/xml/ns/persistence http://xmlns.jcp.org/xml/ns/persistence/persistence_2_1.xsd">
 
-    <persistence-unit name="aidpass-test" transaction-type="RESOURCE_LOCAL">
+    <persistence-unit name="lecafe-test" transaction-type="RESOURCE_LOCAL">
         <provider>org.hibernate.jpa.HibernatePersistenceProvider</provider>
-        <!--<class>com.lecafecommon.entities.BaseEntity</class>-->
+        <class>com.lecafe.common.entities.BaseEntity</class>
         <class>com.lecafe.common.entities.MasterEntity</class>
         <class>com.lecafe.common.entities.Gender</class>
+        <class>com.lecafe.common.entities.AppliedDiscount</class>
+        <class>com.lecafe.common.entities.Bill</class>
+        <class>com.lecafe.common.entities.BillDish</class>
+        <class>com.lecafe.common.entities.Condition</class>
+        <class>com.lecafe.common.entities.ConditionDish</class>
+        <class>com.lecafe.common.entities.Dish</class>
+        <class>com.lecafe.common.entities.DishStatus</class>
+        <class>com.lecafe.common.entities.Event</class>
+        <class>com.lecafe.common.entities.EventCondition</class>
+        <class>com.lecafe.common.entities.EventReward</class>
+        <class>com.lecafe.common.entities.EventStatus</class>
+        <class>com.lecafe.common.entities.Gender</class>
+        <class>com.lecafe.common.entities.Reservation</class>
+        <class>com.lecafe.common.entities.Reward</class>
+        <class>com.lecafe.common.entities.Role</class>
+        <class>com.lecafe.common.entities.TableEntity</class>
         <class>com.lecafe.common.entities.User</class>
+        <class>com.lecafe.common.entities.UserReward</class>
+        <class>com.lecafe.common.entities.UserRole</class>
+        <class>com.lecafe.common.entities.UserStatus</class>
+        <class>com.lecafe.common.entities.UserTableBill</class>
 
         <!--<jar-file>entities.jar</jar-file>-->
         <properties>
             <!-- Configurando propiedades JDBC -->
-            <property name="javax.persistence.jdbc.url" value="jdbc:mysql://127.0.0.1:3306/aidpass_2_0"/>
+            <property name="javax.persistence.jdbc.url" value="jdbc:mysql://127.0.0.1:3306/lecafe?serverTimezone=UTC"/>
             <!--<property name="javax.persistence.jdbc.url" value="jdbc:mysql://192.168.2.14:3306/aidpass_2_0"/>-->
             <property name="javax.persistence.jdbc.driver" value="com.mysql.jdbc.Driver"/>
             <property name="javax.persistence.jdbc.user" value="root"/>
-            <property name="javax.persistence.jdbc.password" value="3squ3l3t0"/>
+            <property name="javax.persistence.jdbc.password" value="root"/>
             <!-- Propiedades Hibernate -->
             <property name="hibernate.dialect" value="org.hibernate.dialect.MySQLDialect"/>
             <property name="hibernate.show_sql" value="true" />
